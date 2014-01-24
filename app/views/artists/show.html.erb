@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+<h1><%= @artist.name %></h1>
+<%= link_to 'Edit Artist', edit_artist_path(@artist) %> |
+<%= link_to 'Back', artists_path %>
+<br>
+<br>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Genre</th>
+      <th>Bpm</th>
+      <th>Releasedate</th>
+      <th>Artist</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @artist.tracks.each do |track| %>
+    <tr>
+      <td><%= link_to track.name, artist_track_path(@artist, track) %></td>
+      <td><%= track.genre %></td>
+      <td><%= track.bpm %></td>
+      <td><%= track.releasedate %></td>
+      <td><%= track.artist.name %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<%= link_to 'New Track', new_artist_track_path(@artist) %>

@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @track.name %>
+</p>
+
+<p>
+  <strong>Genre:</strong>
+  <%= @track.genre %>
+</p>
+
+<p>
+  <strong>Bpm:</strong>
+  <%= @track.bpm %>
+</p>
+
+<p>
+  <strong>Releasedate:</strong>
+  <%= @track.releasedate %>
+</p>
+
+<p>
+  <strong>Artist:</strong>
+  <%= @track.artist_id %>
+</p>
+
+<%= link_to 'Edit', edit_artist_track_path(@artist, @track) %>
+<%= link_to 'Show All', artist_tracks_path(@artist) %>
+

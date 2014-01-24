@@ -1,0 +1,33 @@
+<h1><%= @artist.name %>'s tracks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Genre</th>
+      <th>Bpm</th>
+      <th>Releasedate</th>
+      <th>Artist</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tracks.each do |track| %>
+      <tr>
+        <td><%= track.name %></td>
+        <td><%= track.genre %></td>
+        <td><%= track.bpm %></td>
+        <td><%= track.releasedate %></td>
+        <td><%= track.artist.name %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Track', new_artist_track_path(@artist) %>
